@@ -71,10 +71,18 @@ No frameworks. No libraries. No build tools.
 
 | | Mobile | Desktop |
 |---|---|---|
-| Performance | 66* | 81 |
-| Accessibility | 92 | 92 |
+| Performance | 75* | **96** |
+| Accessibility | 92 | 90 |
 | Best Practices | 100 | 100 |
 | SEO | 100 | 100 |
+
+| Metric | Mobile | Desktop |
+|---|---|---|
+| First Contentful Paint | 1.2s | 0.3s |
+| Largest Contentful Paint | 6.8s | 1.2s |
+| Total Blocking Time | 70ms | 70ms |
+| Cumulative Layout Shift | 0 | 0 |
+| Speed Index | 3.8s | 1.2s |
 
 *Mobile performance is constrained by the full-width hero banner image — a business requirement from the site owner.
 
