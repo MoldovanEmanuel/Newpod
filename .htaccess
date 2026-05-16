@@ -1,0 +1,43 @@
+Options -Indexes
+
+# ── HTTPS + non-www redirect ──
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.newpod\.ro$ [NC]
+RewriteRule ^ https://newpod.ro%{REQUEST_URI} [L,R=301]
+
+# ── PHP errors off ──
+php_flag display_errors off
+php_flag display_startup_errors off
+php_value error_reporting 0
+
+# ── Security headers ──
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── Gzip compression ──
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# ── Browser caching ──
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# ── Canonical index redirect ──
+RewriteCond %{THE_REQUEST} \s/+(index(\.php|\.html?)?)(\?|\ |\s) [NC]
+RewriteRule ^ https://newpod.ro/? [L,R=301]
+
+# ── Custom 404 ──
+ErrorDocument 404 /404.php
