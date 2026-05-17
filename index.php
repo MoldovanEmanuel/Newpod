@@ -110,8 +110,8 @@
     }
   </script>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-  <!-- Google Analytics: înlocuiți G-XXXXXXXXXX cu Measurement ID-ul din contul GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K239B6FVN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -119,7 +119,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-0K239B6FVN');
   </script>
 </head>
 
