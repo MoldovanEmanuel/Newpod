@@ -72,7 +72,7 @@
 
   <!-- NAV -->
   <nav>
-    <a class="logo" href="index">
+    <a class="logo" href="/">
       <div class="logo-mark">☀️</div>
       <span class="logo-text">
         New<span>pod</span>
@@ -80,9 +80,9 @@
       </span>
     </a>
     <ul class="nav-links">
-      <li><a href="index#oferta">Cere ofertă</a></li>
-      <li><a href="index#servicii">Servicii</a></li>
-      <li><a href="index#contact">Contact</a></li>
+      <li><a href="/#oferta">Cere ofertă</a></li>
+      <li><a href="/#servicii">Servicii</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
     <a class="nav-cta" href="tel:0744638212">📞 0744 638 212</a>
     <button class="burger" id="burger" aria-label="Deschide meniu">
@@ -94,9 +94,9 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
     <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Închide meniu">✕</button>
     <ul class="mobile-nav-links" id="mobile-nav-links">
-      <li><a href="index#oferta">Cere ofertă<span class="arrow">→</span></a></li>
-      <li><a href="index#servicii">Servicii<span class="arrow">→</span></a></li>
-      <li><a href="index#contact">Contact<span class="arrow">→</span></a></li>
+      <li><a href="/#oferta">Cere ofertă<span class="arrow">→</span></a></li>
+      <li><a href="/#servicii">Servicii<span class="arrow">→</span></a></li>
+      <li><a href="/#contact">Contact<span class="arrow">→</span></a></li>
     </ul>
     <div class="mobile-menu-bottom">
       <a class="mobile-cta-phone" href="tel:0744638212">📞 0744 638 212</a>
@@ -107,7 +107,7 @@
 
   <main>
     <div class="priv-wrap">
-      <a href="index" class="priv-back">← Înapoi la site</a>
+      <a href="/" class="priv-back">← Înapoi la site</a>
 
       <h1>Politică de confidențialitate</h1>
       <span class="priv-updated">Ultima actualizare: mai 2025</span>
