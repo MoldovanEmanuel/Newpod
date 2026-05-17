@@ -213,13 +213,21 @@ if ($loggedIn) {
         <span class="adm-header-title">Newpod — Recenzii</span>
       </div>
       <div class="adm-header-right">
-        <a href="index.php" target="_blank" class="adm-link-btn">Site →</a>
-        <a href="https://analytics.google.com/analytics/web/#/p538132369/reports/intelligenthome" target="_blank" class="adm-link-btn">📊 GA4</a>
-        <a href="https://search.google.com/search-console?resource_id=https%3A%2F%2Fnewpod.ro%2F" target="_blank" class="adm-link-btn">🔍 GSC</a>
-        <form method="POST" style="display:inline">
-          <input type="hidden" name="action" value="logout">
-          <button type="submit" class="adm-link-btn adm-logout-btn">Ieșire</button>
-        </form>
+        <div class="adm-burger-wrap">
+          <button class="adm-burger-btn" id="adm-burger" aria-label="Meniu">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="adm-dropdown" id="adm-dropdown">
+            <a href="index.php" target="_blank" class="adm-drop-item">🌐 Vezi site</a>
+            <a href="https://analytics.google.com/analytics/web/#/p538132369/reports/intelligenthome" target="_blank" class="adm-drop-item">📊 Google Analytics</a>
+            <a href="https://search.google.com/search-console?resource_id=https%3A%2F%2Fnewpod.ro%2F" target="_blank" class="adm-drop-item">🔍 Search Console</a>
+            <div class="adm-drop-divider"></div>
+            <form method="POST">
+              <input type="hidden" name="action" value="logout">
+              <button type="submit" class="adm-drop-item adm-drop-logout">⬅ Ieșire</button>
+            </form>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -432,6 +440,16 @@ if ($loggedIn) {
     });
     document.getElementById('del-modal').addEventListener('click', function(e) {
       if (e.target === this) this.style.display = 'none';
+    });
+
+    var burger = document.getElementById('adm-burger');
+    var dropdown = document.getElementById('adm-dropdown');
+    burger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('open');
     });
   </script>
 
