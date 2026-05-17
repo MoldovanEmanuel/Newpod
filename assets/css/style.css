@@ -879,7 +879,6 @@ section {
   font-weight: 300;
   font-size: clamp(1.05rem, 2.2vw, 1.5rem);
   line-height: 1.5;
-  max-width: 680px;
   color: rgba(255, 255, 255, 0.92);
   margin-bottom: 2rem;
 }
@@ -959,6 +958,204 @@ section {
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.55;
+}
+
+/* ── RECENZII — dynamic additions ── */
+.rev-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+.rev-avg-num {
+  font-family: "DM Sans", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+.rev-avg-stars {
+  color: var(--orange);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+.rev-avg-count {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  font-weight: 600;
+}
+.rev-reply {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+.rev-reply-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--green);
+  margin-bottom: 0.3rem;
+}
+.rev-reply p {
+  font-size: 0.83rem;
+  color: var(--ink);
+}
+
+/* ── Review submission form ── */
+.rev-submit-wrap {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--border);
+}
+.rev-submit-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: start;
+}
+.rev-submit-left h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+.rev-submit-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+.rev-submit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/* ── Review info panel ── */
+.rev-info-panel {
+  background: linear-gradient(160deg, var(--ink2) 0%, #0b2211 100%);
+  border-radius: 22px;
+  padding: 2.2rem;
+  color: #fff;
+  position: sticky;
+  top: 82px;
+}
+.rip-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 1.2rem;
+}
+.rip-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.rip-avg {
+  font-family: "DM Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+.rip-stars {
+  color: var(--orange2);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+.rip-count {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+.rip-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.6rem;
+}
+.rip-pt {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.5;
+}
+.rip-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  background: rgba(108,192,74,0.22);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--lime);
+  margin-top: 0.15rem;
+}
+.rip-note {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.55;
+}
+.rip-note strong { color: #fff; }
+.rev-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+.rev-optional {
+  font-size: 0.78em;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.rev-charcount {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 0.3rem;
+}
+.star-picker {
+  display: flex;
+  gap: 0.15rem;
+  margin: 0.5rem 0 0.3rem;
+}
+.star-btn {
+  background: none;
+  border: none;
+  color: #d4d4d4;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  width: auto;
+  transition: color 0.1s, transform 0.12s;
+}
+.star-btn.active { color: var(--orange); }
+.star-btn:hover  { transform: scale(1.18); }
+
+@media (max-width: 860px) {
+  .rev-submit-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .rev-info-panel { display: none; }
+}
+@media (max-width: 600px) {
+  .rev-form-row { grid-template-columns: 1fr; }
 }
 
 /* ── ÎNTREBĂRI ── */

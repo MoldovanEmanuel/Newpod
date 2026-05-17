@@ -137,4 +137,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['form_type'])) {
             header("Location: index.php?sent=intrebare#trimite"); exit;
         }
     }
+
+    // ── FORM 4: Recenzie ──
+    if ($form_type === 'recenzie') {
+        require_once __DIR__ . '/reviews.php';
+
+        $ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+
+        if (isRateLimited($ip)) {
+            header("Location: index.php?sent=recenzie#recenzii"); exit;
+        }
+
+        if (empty($_POST['rev_name']))     $errors[] = 'Nume';
+        if (empty($_POST['rev_location'])) $errors[] = 'Localitate';
+        if (empty($_POST['rev_text']))     $errors[] = 'Recenzie';
+        if (!empty($_POST['rev_text']) && mb_strlen(trim($_POST['rev_text']), 'UTF-8') < 30) {
+            $errors[] = 'Recenzia trebuie să aibă minim 30 de caractere';
+        }
+
+        $rating = intval($_POST['rev_rating'] ?? 5);
+        if ($rating < 1 || $rating > 5) $rating = 5;
+
+        if (empty($errors)) {
+            $name     = clean($_POST['rev_name']);
+            $location = clean($_POST['rev_location'] ?? '');
+            $text     = clean($_POST['rev_text']);
+            $email    = clean($_POST['rev_email']    ?? '');
+            $phone    = clean($_POST['rev_phone']    ?? '');
+
+            $review = [
+                'id'             => generateReviewId(),
+                'name'           => $name,
+                'display_name'   => makeDisplayName($name),
+                'label'          => $name,
+                'location'       => $location,
+                'email'          => $email,
+                'phone'          => $phone,
+                'rating'         => $rating,
+                'text'           => $text,
+                'owner_reply'    => '',
+                'status'         => 'pending',
+                'featured'       => false,
+                'date_submitted' => date('c'),
+                'date_approved'  => null,
+            ];
+
+            $reviews   = loadReviews();
+            $reviews[] = $review;
+            saveReviews($reviews);
+            setRateLimit($ip);
+
+            $notifMsg  = "Ai un review care asteapta sa fie publicat.\n\n";
+            $notifMsg .= "Nume: $name\n";
+            $notifMsg .= "Localitate: $location\n";
+            if ($email) $notifMsg .= "Email: $email\n";
+            if ($phone) $notifMsg .= "Telefon: $phone\n";
+            $notifMsg .= "Rating: $rating stele\n";
+            $notifMsg .= "Recenzie: $text\n\n";
+            $notifMsg .= "Gestioneaza recenziile la: https://newpod.ro/admin-reviews.php";
+
+            mail($to, safeStr("Review nou – newpod.ro"), $notifMsg, $header);
+
+            header("Location: index.php?sent=recenzie#recenzii"); exit;
+        }
+    }
 }

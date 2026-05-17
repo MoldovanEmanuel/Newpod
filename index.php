@@ -1,4 +1,4 @@
-<?php require 'includes/form_handler.php'; ?>
+<?php require 'includes/form_handler.php'; require 'includes/reviews.php'; ?>
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -142,6 +142,7 @@
       <li><a href="#recenzii">Recenzii</a></li>
       <li><a href="#intrebari">Întrebări</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="admin-reviews.php">Admin</a></li>
     </ul>
     <a class="nav-cta" href="tel:0744638212">📞 0744 638 212</a>
     <button class="burger" id="burger" aria-label="Deschide meniu">
@@ -160,6 +161,7 @@
       <li><a href="#recenzii">Recenzii<span class="arrow">→</span></a></li>
       <li><a href="#intrebari">Întrebări<span class="arrow">→</span></a></li>
       <li><a href="#contact">Contact<span class="arrow">→</span></a></li>
+      <li><a href="admin-reviews.php">Admin<span class="arrow">→</span></a></li>
     </ul>
     <div class="mobile-menu-bottom">
       <a class="mobile-cta-phone" href="tel:0744638212">📞 0744 638 212</a>
@@ -415,42 +417,147 @@
     <section id="recenzii">
       <div class="eyebrow">Ce spun clienții</div>
       <h2 class="sec-title">Recenzii</h2>
+
+      <?php $stats = getReviewStats(); if ($stats['count'] > 0): ?>
+      <div class="rev-stats">
+        <div class="rev-avg-num"><?php echo number_format($stats['avg'], 1, '.', ''); ?></div>
+        <div>
+          <div class="rev-avg-stars">
+            <?php for ($i = 1; $i <= 5; $i++) echo $i <= round($stats['avg']) ? '★' : '☆'; ?>
+          </div>
+          <div class="rev-avg-count">Bazat pe <?php echo $stats['count']; ?> recenzii</div>
+        </div>
+      </div>
+      <?php endif; ?>
+
       <p class="sec-desc">Proiecte realizate în toată țara. Iată câteva dintre experiențele clienților noștri.</p>
+
+      <?php $featured = getFeaturedReview(); if ($featured): ?>
       <div class="review-hero">
-        <div class="rh-stars">★★★★★</div>
-        <blockquote class="rh-quote">„Beneficiez de o instalație ACM (iarnă–vară) cu 2 panouri solare, boiler 500L, automatizare, realizată de SC Newpod SRL prin programul „Casa Verde". Raport calitate/preț foarte bun, seriozitate."</blockquote>
+        <div class="rh-stars"><?php echo str_repeat('★', (int)$featured['rating']); ?></div>
+        <blockquote class="rh-quote">„<?php echo htmlspecialchars($featured['text']); ?>"</blockquote>
         <div class="rh-meta">
           <div class="rh-avatar">👤</div>
           <div>
-            <div class="rh-name">Client verificat — Sistem solar ACM</div>
-            <div class="rh-info">Contact: 0363 402 115</div>
+            <div class="rh-name">
+              <?php echo htmlspecialchars($featured['display_name']); ?>
+              <?php if (!empty($featured['label']) && $featured['label'] !== $featured['display_name']): ?>
+                — <?php echo htmlspecialchars($featured['label']); ?>
+              <?php endif; ?>
+            </div>
+            <?php if (!empty($featured['location'])): ?>
+            <div class="rh-info">📍 <?php echo htmlspecialchars($featured['location']); ?></div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
+      <?php endif; ?>
+
+      <?php $approved = getApprovedReviews(); if (!empty($approved)): ?>
       <div class="rev-grid">
+        <?php foreach ($approved as $r): ?>
         <div class="rev-card">
           <div class="rev-top">
-            <p class="rev-name">Locuință de vară</p><span class="rev-date">01.03.2014</span>
+            <p class="rev-name"><?php echo htmlspecialchars($r['display_name']); ?></p>
+            <span class="rev-date"><?php echo date('d.m.Y', strtotime($r['date_submitted'])); ?></span>
           </div>
-          <div class="rev-loc">📍 Munții Țibleș</div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Cabană montană — realizat iluminat și alimentare mici consumatori (TV, receiver satelit, frigider), stocare energie electrică în acumulatori. Preț bun, fiabilitate sporită. <em style="font-size:.78rem;color:var(--green)">— 0753 432 703</em></p>
+          <?php if (!empty($r['location'])): ?>
+          <div class="rev-loc">📍 <?php echo htmlspecialchars($r['location']); ?></div>
+          <?php endif; ?>
+          <div class="rev-stars">
+            <?php echo str_repeat('★', (int)$r['rating']); echo str_repeat('☆', 5 - (int)$r['rating']); ?>
+          </div>
+          <p><?php echo nl2br(htmlspecialchars($r['text'])); ?></p>
+          <?php if (!empty($r['owner_reply'])): ?>
+          <div class="rev-reply">
+            <span class="rev-reply-label">Răspuns Newpod:</span>
+            <p><?php echo nl2br(htmlspecialchars($r['owner_reply'])); ?></p>
+          </div>
+          <?php endif; ?>
         </div>
-        <div class="rev-card">
-          <div class="rev-top">
-            <p class="rev-name">Sistem solar ACM</p><span class="rev-date">28.03.2011</span>
+        <?php endforeach; ?>
+      </div>
+      <?php endif; ?>
+
+      <div class="rev-submit-wrap">
+        <div class="rev-submit-layout">
+
+          <!-- Form -->
+          <div class="rev-submit-left">
+            <h3>Lasă o recenzie</h3>
+            <p class="rev-submit-sub">Experiența ta ajută alți clienți. Recenziile sunt verificate înainte de publicare.</p>
+            <form method="POST" action="index.php" class="rev-submit-form">
+              <input type="hidden" name="form_type" value="recenzie" />
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+              <?php if (!empty($errors) && isset($_POST['form_type']) && $_POST['form_type'] === 'recenzie'): ?>
+                <script>window.__formError = <?php echo json_encode('Câmpuri lipsă: ' . implode(', ', $errors)); ?>;</script>
+              <?php endif; ?>
+              <div class="rev-form-row">
+                <div>
+                  <label>Nume *</label>
+                  <input type="text" name="rev_name" placeholder="Numele dvs." required maxlength="80"
+                    value="<?php echo isset($_POST['rev_name']) ? htmlspecialchars($_POST['rev_name']) : ''; ?>" />
+                </div>
+                <div>
+                  <label>Localitate *</label>
+                  <input type="text" name="rev_location" placeholder="ex. Bistrița" required maxlength="60"
+                    value="<?php echo isset($_POST['rev_location']) ? htmlspecialchars($_POST['rev_location']) : ''; ?>" />
+                </div>
+                <div>
+                  <label>Email <span class="rev-optional">(opțional)</span></label>
+                  <input type="email" name="rev_email" placeholder="email@exemplu.ro" maxlength="120"
+                    value="<?php echo isset($_POST['rev_email']) ? htmlspecialchars($_POST['rev_email']) : ''; ?>" />
+                </div>
+                <div>
+                  <label>Telefon <span class="rev-optional">(opțional)</span></label>
+                  <input type="tel" name="rev_phone" placeholder="07xx xxx xxx" maxlength="20"
+                    value="<?php echo isset($_POST['rev_phone']) ? htmlspecialchars($_POST['rev_phone']) : ''; ?>" />
+                </div>
+              </div>
+              <div>
+                <label>Notă *</label>
+                <div class="star-picker" id="star-picker">
+                  <button type="button" class="star-btn active" data-value="1" aria-label="1 stea">★</button>
+                  <button type="button" class="star-btn active" data-value="2" aria-label="2 stele">★</button>
+                  <button type="button" class="star-btn active" data-value="3" aria-label="3 stele">★</button>
+                  <button type="button" class="star-btn active" data-value="4" aria-label="4 stele">★</button>
+                  <button type="button" class="star-btn active" data-value="5" aria-label="5 stele">★</button>
+                  <input type="hidden" name="rev_rating" id="rev-rating-input" value="5" />
+                </div>
+              </div>
+              <div>
+                <label>Recenzia ta * <span class="rev-optional">(minim 30 caractere)</span></label>
+                <textarea name="rev_text" rows="4" placeholder="Descrieți experiența dvs. cu Newpod..." minlength="30" required maxlength="1000"><?php echo isset($_POST['rev_text']) ? htmlspecialchars($_POST['rev_text']) : ''; ?></textarea>
+                <span class="rev-charcount" id="rev-charcount">0 / 1000</span>
+              </div>
+              <button type="submit" class="submit-btn">Trimite recenzia →</button>
+              <p class="form-note">Recenziile sunt publicate după verificare în maxim 24 ore.</p>
+            </form>
           </div>
-          <div class="rev-loc">📍 Bistrița</div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Sistem realizat cu panouri solare plane, boiler de 500 litri. Complet automatizat, funcționează indiferent de anotimp. Circuitul de încălzire este încărcat cu antigel.</p>
-        </div>
-        <div class="rev-card">
-          <div class="rev-top">
-            <p class="rev-name">Sistem solar iarnă-vară</p><span class="rev-date">20.09.2011</span>
+
+          <!-- Info panel -->
+          <div class="rev-info-panel">
+            <div class="rip-eyebrow">⭐ Recenzii clienți</div>
+            <?php if ($stats['count'] > 0): ?>
+            <div class="rip-rating">
+              <span class="rip-avg"><?php echo number_format($stats['avg'], 1, '.', ''); ?></span>
+              <div>
+                <div class="rip-stars"><?php for ($i = 1; $i <= 5; $i++) echo $i <= round($stats['avg']) ? '★' : '☆'; ?></div>
+                <div class="rip-count"><?php echo $stats['count']; ?> recenzii verificate</div>
+              </div>
+            </div>
+            <?php endif; ?>
+            <div class="rip-points">
+              <div class="rip-pt"><span class="rip-icon">✓</span><span>Recenziile sunt verificate de echipa Newpod înainte de publicare</span></div>
+              <div class="rip-pt"><span class="rip-icon">✓</span><span>Experiența ta ajută alți clienți să facă alegerea potrivită</span></div>
+              <div class="rip-pt"><span class="rip-icon">✓</span><span>Publicate în maxim 24 de ore</span></div>
+              <div class="rip-pt"><span class="rip-icon">✓</span><span>Un singur review per client</span></div>
+            </div>
+            <div class="rip-note">
+              <strong>Peste 15 ani</strong> de experiență în instalații solare în județul Bistrița-Năsăud și împrejurimi.
+            </div>
           </div>
-          <div class="rev-loc">📍 Dumitrita</div>
-          <div class="rev-stars">★★★★★</div>
-          <p>Sistem cu panouri Bosch, boiler de 300 litri, complet automatizat. Realizat și cu PV-Heater — energia electrică solară transformată în termică. Control wireless de pe calculator.</p>
+
         </div>
       </div>
     </section>
@@ -621,7 +728,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a></p>
+    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a> · <a href="privacy.php">Politică de confidențialitate</a></p>
   </footer>
 
   <script>
@@ -729,6 +836,11 @@
         icon: '✓',
         title: 'Întrebare trimisă!',
         text: 'Răspundem în maxim 24 ore printr-un specialist în energie solară.'
+      },
+      recenzie: {
+        icon: '✓',
+        title: 'Recenzie trimisă!',
+        text: 'Mulțumim! Recenzia dvs. va fi publicată după verificare în maxim 24 ore.'
       }
     };
     if (sentParam && sentMsgs[sentParam]) {
@@ -794,6 +906,29 @@
         }
       });
     });
+
+    // ── Star picker ──
+    const starPicker = document.getElementById('star-picker');
+    if (starPicker) {
+      const starBtns = starPicker.querySelectorAll('.star-btn');
+      const ratingInput = document.getElementById('rev-rating-input');
+      let selected = 5;
+      const update = n => starBtns.forEach((s, i) => s.classList.toggle('active', i < n));
+      starBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => { selected = i + 1; ratingInput.value = selected; update(selected); });
+        btn.addEventListener('mouseenter', () => update(i + 1));
+      });
+      starPicker.addEventListener('mouseleave', () => update(selected));
+    }
+
+    // ── Review char count ──
+    const revText = document.querySelector('textarea[name="rev_text"]');
+    const revCount = document.getElementById('rev-charcount');
+    if (revText && revCount) {
+      const upd = () => revCount.textContent = revText.value.length + ' / 1000';
+      revText.addEventListener('input', upd);
+      upd();
+    }
   </script>
 </body>
 

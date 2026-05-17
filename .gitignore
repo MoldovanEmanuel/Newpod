@@ -1,3 +1,6 @@
 logs/form_errors.log
 assets/fonts/demo.html
 assets/fonts/stylesheet.css
+data/rate_limit.json
+data/admin_config.json
+data/reviews.json
