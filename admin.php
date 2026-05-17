@@ -215,6 +215,7 @@ if ($loggedIn) {
       <div class="adm-header-right">
         <a href="index.php" target="_blank" class="adm-link-btn">Vezi site →</a>
         <a href="https://analytics.google.com/analytics/web/#/p538132369/reports/intelligenthome" target="_blank" class="adm-link-btn">📊 Analytics →</a>
+        <a href="https://search.google.com/search-console?resource_id=https%3A%2F%2Fnewpod.ro%2F" target="_blank" class="adm-link-btn">🔍 Search Console →</a>
         <form method="POST" style="display:inline">
           <input type="hidden" name="action" value="logout">
           <button type="submit" class="adm-link-btn adm-logout-btn">Ieșire</button>
