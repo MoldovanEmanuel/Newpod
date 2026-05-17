@@ -214,6 +214,7 @@ if ($loggedIn) {
       </div>
       <div class="adm-header-right">
         <a href="index.php" target="_blank" class="adm-link-btn">Vezi site →</a>
+        <a href="https://analytics.google.com/analytics/web/#/p538132369/reports/intelligenthome" target="_blank" class="adm-link-btn">📊 Analytics →</a>
         <form method="POST" style="display:inline">
           <input type="hidden" name="action" value="logout">
           <button type="submit" class="adm-link-btn adm-logout-btn">Ieșire</button>
