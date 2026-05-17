@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +14,7 @@
       margin: 0 auto;
       padding: 5rem 5% 6rem;
     }
+
     .priv-back {
       display: inline-flex;
       align-items: center;
@@ -23,7 +25,11 @@
       margin-bottom: 2.5rem;
       transition: color 0.2s;
     }
-    .priv-back:hover { color: var(--green2); }
+
+    .priv-back:hover {
+      color: var(--green2);
+    }
+
     .priv-wrap h1 {
       font-family: "DM Sans", sans-serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -32,12 +38,14 @@
       letter-spacing: -0.03em;
       margin-bottom: 0.4rem;
     }
+
     .priv-updated {
       font-size: 0.8rem;
       color: var(--muted);
       margin-bottom: 3rem;
       display: block;
     }
+
     .priv-wrap h2 {
       font-family: "DM Sans", sans-serif;
       font-size: 1.1rem;
@@ -45,17 +53,27 @@
       color: var(--ink);
       margin: 2.2rem 0 0.6rem;
     }
-    .priv-wrap p, .priv-wrap li {
+
+    .priv-wrap p,
+    .priv-wrap li {
       font-size: 0.92rem;
       color: var(--muted);
       line-height: 1.75;
     }
+
     .priv-wrap ul {
       padding-left: 1.3rem;
       margin: 0.5rem 0;
     }
-    .priv-wrap li { margin-bottom: 0.3rem; }
-    .priv-wrap a { color: var(--green2); }
+
+    .priv-wrap li {
+      margin-bottom: 0.3rem;
+    }
+
+    .priv-wrap a {
+      color: var(--green2);
+    }
+
     .priv-highlight {
       background: var(--cream);
       border-left: 3px solid var(--green2);
@@ -68,6 +86,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -132,9 +151,9 @@
         <li>Informații tehnice despre imobil (opționale, pentru calculul ofertei)</li>
         <li>Mesajul sau întrebarea dvs.</li>
       </ul>
-      <p>Aceste date sunt trimise direct la adresa noastră de e-mail și sunt folosite exclusiv pentru a răspunde solicitării dvs. Nu sunt stocate în nicio bază de date pe server.</p>
+      <p>Aceste date sunt trimise direct la adresa noastră de e-mail și sunt folosite exclusiv pentru a răspunde solicitării dvs. Nu sunt stocate în nicio bază de date pe server.</p><br>
 
-      <p><strong>Formularul de recenzie</strong></p>
+      <p><strong>Formularul de recenzie</strong></p><br>
       <p>Dacă lăsați o recenzie, colectăm:</p>
       <ul>
         <li>Numele dvs. (afișat public în formatul „Prenume N.")</li>
@@ -142,9 +161,9 @@
         <li>Adresa de e-mail și numărul de telefon (opționale — nu sunt afișate public, folosite doar pentru verificare internă)</li>
         <li>Textul recenziei și nota acordată</li>
       </ul>
-      <p>Recenziile sunt stocate pe serverul nostru într-un fișier securizat și publicate doar după verificare manuală.</p>
+      <p>Recenziile sunt stocate pe serverul nostru într-un fișier securizat și publicate doar după verificare manuală.</p><br>
 
-      <p><strong>Adresa IP</strong></p>
+      <p><strong>Adresa IP</strong></p><br>
       <p>Pentru a preveni spam-ul, înregistrăm adresa IP a dispozitivului de la care se trimite o recenzie. Această informație este păstrată maximum 48 de ore și nu este folosită în alt scop.</p>
 
       <h2>3. Cookie-uri</h2>
@@ -152,9 +171,9 @@
         Site-ul newpod.ro nu folosește cookie-uri de urmărire sau publicitate pentru vizitatorii obișnuiți.
         Singurul cookie tehnic folosit este un cookie de sesiune pentru panoul de administrare intern —
         acesta nu se activează pentru vizitatorii site-ului.
-      </p>
+      </p><br>
 
-      <p><strong>Google Analytics</strong></p>
+      <p><strong>Google Analytics</strong></p><br>
       <p>
         Site-ul poate utiliza Google Analytics pentru a înțelege modul în care este folosit (număr de vizitatori, pagini accesate).
         Google Analytics poate stoca cookie-uri anonime în browserul dvs. Datele colectate sunt anonimizate
@@ -230,8 +249,11 @@
     });
 
     mobileClose.addEventListener('click', closeMenu);
-    mobileLinks.forEach(function(l) { l.addEventListener('click', closeMenu); });
+    mobileLinks.forEach(function(l) {
+      l.addEventListener('click', closeMenu);
+    });
   </script>
 
 </body>
+
 </html>
