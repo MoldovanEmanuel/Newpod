@@ -194,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['form_type'])) {
             if ($phone) $notifMsg .= "Telefon: $phone\n";
             $notifMsg .= "Rating: $rating stele\n";
             $notifMsg .= "Recenzie: $text\n\n";
-            $notifMsg .= "Gestioneaza recenziile la: https://newpod.ro/admin-reviews.php";
+            $notifMsg .= "Gestioneaza recenziile la: https://newpod.ro/admin.php";
 
             mail($to, safeStr("Review nou – newpod.ro"), $notifMsg, $header);
 

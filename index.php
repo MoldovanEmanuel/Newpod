@@ -142,7 +142,7 @@
       <li><a href="#recenzii">Recenzii</a></li>
       <li><a href="#intrebari">Întrebări</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="admin-reviews.php">Admin</a></li>
+      <li><a href="admin.php">Admin</a></li>
     </ul>
     <a class="nav-cta" href="tel:0744638212">📞 0744 638 212</a>
     <button class="burger" id="burger" aria-label="Deschide meniu">
@@ -161,7 +161,7 @@
       <li><a href="#recenzii">Recenzii<span class="arrow">→</span></a></li>
       <li><a href="#intrebari">Întrebări<span class="arrow">→</span></a></li>
       <li><a href="#contact">Contact<span class="arrow">→</span></a></li>
-      <li><a href="admin-reviews.php">Admin<span class="arrow">→</span></a></li>
+      <li><a href="admin.php">Admin<span class="arrow">→</span></a></li>
     </ul>
     <div class="mobile-menu-bottom">
       <a class="mobile-cta-phone" href="tel:0744638212">📞 0744 638 212</a>
@@ -728,7 +728,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a> · <a href="privacy.php">Politică de confidențialitate</a></p>
+    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a> · <a href="politica-de-confidentialitate.php">Politică de confidențialitate</a></p>
   </footer>
 
   <script>

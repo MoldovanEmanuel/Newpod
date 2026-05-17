@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$setupError) {
             $cfg = ['user' => $user, 'hash' => password_hash($pass, PASSWORD_DEFAULT)];
             file_put_contents(ADMIN_CONFIG, json_encode($cfg), LOCK_EX);
-            header('Location: admin-reviews.php?setup=done'); exit;
+            header('Location: admin.php?setup=done'); exit;
         }
     }
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ) {
             session_regenerate_id(true);
             $_SESSION['adm_ok'] = true;
-            header('Location: admin-reviews.php'); exit;
+            header('Location: admin.php'); exit;
         }
         $loginError = 'Username sau parolă incorectă.';
     }
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($action === 'logout') {
             session_destroy();
-            header('Location: admin-reviews.php'); exit;
+            header('Location: admin.php'); exit;
         }
 
         if ($action === 'approve' && $id) {
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             unset($r);
             saveReviews($reviews);
-            header('Location: admin-reviews.php#pending'); exit;
+            header('Location: admin.php#pending'); exit;
         }
 
         if ($action === 'delete' && $id) {
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 return $r['id'] !== $id;
             }));
             saveReviews($reviews);
-            header('Location: admin-reviews.php'); exit;
+            header('Location: admin.php'); exit;
         }
 
         if ($action === 'save' && $id) {
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             unset($r);
             saveReviews($reviews);
-            header('Location: admin-reviews.php'); exit;
+            header('Location: admin.php'); exit;
         }
     }
 }

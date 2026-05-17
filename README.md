@@ -41,7 +41,7 @@ No frameworks. No libraries. No build tools.
 ### Review System
 - Visitors can submit reviews without an account
 - Reviews stored in `data/reviews.json` (flat-file, no database required)
-- **Admin panel** (`admin-reviews.php`) — session-based login with hashed password (`password_hash`)
+- **Admin panel** (`admin.php`) — session-based login with hashed password (`password_hash`)
 - First-run setup page — admin creates username and password on initial visit
 - Pending queue — admin can edit name, location, text, rating, owner reply, featured flag, then approve or delete
 - Only one featured review at a time — featured card displayed as a large hero above the review grid
@@ -85,7 +85,7 @@ No frameworks. No libraries. No build tools.
 - Sensitive files excluded from git: `data/admin_config.json`, `data/reviews.json`, `data/rate_limit.json`
 
 ### Privacy & GDPR
-- Privacy policy page (`privacy.php`) in Romanian covering all data collected
+- Privacy policy page (`politica-de-confidentialitate.php`) in Romanian covering all data collected
 - No tracking cookies for regular visitors
 - IP addresses retained maximum 48 hours
 - Reviewer personal data (email, phone) never displayed publicly
@@ -118,8 +118,8 @@ No frameworks. No libraries. No build tools.
 ```
 Newpod/
 ├── index.php                  # Main page
-├── admin-reviews.php          # Admin panel (login-protected)
-├── privacy.php                # Privacy policy (GDPR)
+├── admin.php          # Admin panel (login-protected)
+├── politica-de-confidentialitate.php                # Privacy policy (GDPR)
 ├── 404.php                    # Custom error page
 ├── .htaccess                  # Apache config
 ├── sitemap.xml
@@ -164,7 +164,7 @@ mv _htaccess .htaccess
 1. Upload all files to the server
 2. Ensure `data/` and `logs/` directories are writable by PHP (`chmod 755` or `775`)
 3. Create `data/reviews.json` with an empty array `[]` if starting fresh
-4. Visit `yourdomain.com/admin-reviews.php` to set the admin username and password
+4. Visit `yourdomain.com/admin.php` to set the admin username and password
 
 ---
 
