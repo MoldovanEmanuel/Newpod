@@ -16,7 +16,7 @@
   <meta property="og:description" content="SC Newpod SRL instalează panouri solare fotovoltaice și sisteme ACM în Bistrița și împrejurimi. Ofertă gratuită, documentație Casa Verde inclusă." />
   <meta property="og:image" content="https://newpod.ro/assets/images/banner-newpod.webp" />
   <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" as="image" href="assets/images/banner-newpod.webp" imagesrcset="assets/images/banner-newpod-mobile.webp 750w, assets/images/banner-newpod.webp 1440w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/images/banner-newpod.webp" imagesrcset="assets/images/banner-newpod-mobile.webp 750w, assets/images/banner-newpod.webp 1440w" imagesizes="100vw" fetchpriority="high" media="(min-width: 861px)" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script type="application/ld+json">
     {

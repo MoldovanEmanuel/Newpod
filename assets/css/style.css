@@ -343,6 +343,9 @@ nav {
   .burger {
     display: flex;
   }
+  #acasa {
+    display: none;
+  }
 }
 
 /* ── HERO BANNER ── */
