@@ -202,14 +202,30 @@
   </footer>
 
   <script>
-    // Mobile menu
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileClose = document.getElementById('mobile-menu-close');
     const mobileLinks = document.querySelectorAll('#mobile-nav-links a');
-    function openMenu() { mobileMenu.classList.add('open'); mobileMenu.removeAttribute('aria-hidden'); mobileMenu.removeAttribute('inert'); burger.setAttribute('aria-expanded', 'true'); }
-    function closeMenu() { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden', 'true'); mobileMenu.setAttribute('inert', ''); burger.setAttribute('aria-expanded', 'false'); }
-    burger.addEventListener('click', openMenu);
+
+    function closeMenu() {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.setAttribute('inert', '');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', function() {
+      var isOpen = burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      if (isOpen) mobileMenu.removeAttribute('inert');
+      else mobileMenu.setAttribute('inert', '');
+      burger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
     mobileClose.addEventListener('click', closeMenu);
     mobileLinks.forEach(function(l) { l.addEventListener('click', closeMenu); });
   </script>
