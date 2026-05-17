@@ -39,12 +39,12 @@ php_value error_reporting 0
 RewriteCond %{THE_REQUEST} \s/+(index(\.php|\.html?)?)(\?|\ |\s) [NC]
 RewriteRule ^ https://newpod.ro/? [L,R=301]
 
-# ── Clean URLs (remove .php extension) ──
-RewriteCond %{THE_REQUEST} \s/+([^?\ ]+)\.php [NC]
+# ── Clean URLs (admin and privacy pages only) ──
+RewriteCond %{THE_REQUEST} \s/+(admin|politica-de-confidentialitate)\.php [NC]
 RewriteRule ^ /%1 [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^.]+)$ $1.php [L]
+RewriteRule ^(admin|politica-de-confidentialitate)$ $1.php [L]
 
 # ── Custom 404 ──
 ErrorDocument 404 /404.php
