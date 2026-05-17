@@ -1825,15 +1825,70 @@ section {
 
 /* ── FOOTER ── */
 footer {
-  background: #080f07;
-  color: rgba(255, 255, 255, 0.35);
-  text-align: center;
-  padding: 1.8rem;
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  color: rgba(0, 0, 0, 0.42);
   font-size: 0.79rem;
+  padding: 2rem 1.8rem 1.6rem;
 }
 footer a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.52);
   text-decoration: none;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: var(--green2);
+}
+.ft-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ft-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  margin-bottom: 1rem;
+}
+.ft-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.ft-links span {
+  opacity: 0.4;
+}
+.ft-anpc {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.ft-anpc img {
+  height: 36px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.ft-anpc a:hover img {
+  opacity: 1;
+}
+.ft-legal {
+  text-align: center;
+  line-height: 1.75;
+}
+@media (max-width: 640px) {
+  .ft-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .ft-legal {
+    text-align: left;
+  }
 }
 
 /* ── PARTENERI 3-COL ── */

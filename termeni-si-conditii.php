@@ -208,8 +208,24 @@
   </main>
 
   <footer>
-    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a></p>
-    <p><a href="/termeni-si-conditii">Termeni și condiții</a> · <a href="/politica-de-confidentialitate">Politică de confidențialitate</a></p>
+    <div class="ft-inner">
+      <div class="ft-top">
+        <div class="ft-links">
+          <a href="/termeni-si-conditii">Termeni și condiții</a>
+          <span>·</span>
+          <a href="/politica-de-confidentialitate">Politică de confidențialitate</a>
+        </div>
+        <div class="ft-anpc">
+          <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener" title="Soluționarea Alternativă a Litigiilor">
+            <img src="/assets/images/anpc-sal.png" alt="ANPC – Soluționarea Alternativă a Litigiilor" />
+          </a>
+          <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" title="Soluționarea Online a Litigiilor">
+            <img src="/assets/images/anpc-sol.png" alt="SOL – Soluționarea Online a Litigiilor" />
+          </a>
+        </div>
+      </div>
+      <p class="ft-legal">© 2025 SC Newpod SRL · CUI 29078920 · J06/560/2011 · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a></p>
+    </div>
   </footer>
 
   <?php require_once __DIR__ . '/includes/cookie-banner.php'; ?>
