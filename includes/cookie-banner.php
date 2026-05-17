@@ -88,10 +88,10 @@
     if (stored) {
       if (stored.analytics) loadGA4();
     } else {
-      setTimeout(function () { banner.style.display = 'block'; }, 700);
+      setTimeout(function () { banner.style.display = 'flex'; }, 700);
     }
   } catch (e) {
-    setTimeout(function () { banner.style.display = 'block'; }, 700);
+    setTimeout(function () { banner.style.display = 'flex'; }, 700);
   }
 
   // Banner
