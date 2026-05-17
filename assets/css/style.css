@@ -1708,32 +1708,39 @@ section {
 /* ── COOKIE BANNER ── */
 .ck-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   z-index: 9000;
-  background: #fff;
-  border-top: 1px solid var(--border);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.10);
-  padding: 1.1rem 5%;
-  animation: ck-slide-up 0.35s ease;
-}
-@keyframes ck-slide-up {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
-}
-.ck-banner-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0,0,0,0.45);
+  animation: ck-fade-in 0.3s ease;
 }
-.ck-banner-text strong { display: block; font-size: 0.88rem; color: var(--ink); margin-bottom: 0.2rem; }
-.ck-banner-text p { font-size: 0.78rem; color: var(--muted); margin: 0; line-height: 1.5; }
+@keyframes ck-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.ck-banner-inner {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  animation: ck-pop-in 0.3s ease;
+}
+@keyframes ck-pop-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.ck-banner-text strong { display: block; font-size: 1rem; color: var(--ink); margin-bottom: 0.35rem; font-family: "DM Sans", sans-serif; }
+.ck-banner-text p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.6; }
 .ck-banner-text a { color: var(--green2); }
-.ck-banner-btns { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.ck-banner-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .ck-btn {
   padding: 0.5rem 1.1rem;
   border-radius: 8px;
@@ -1810,8 +1817,7 @@ section {
 .ck-modal-actions { display: flex; gap: 0.6rem; justify-content: flex-end; margin-top: 1.3rem; flex-wrap: wrap; }
 
 @media (max-width: 700px) {
-  .ck-banner-inner { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
-  .ck-banner-btns { flex-wrap: wrap; width: 100%; }
+  .ck-banner-inner { padding: 1.5rem; }
   .ck-banner-btns .ck-btn { flex: 1; text-align: center; }
   .ck-modal-actions { flex-direction: column-reverse; }
   .ck-modal-actions .ck-btn { width: 100%; text-align: center; }
