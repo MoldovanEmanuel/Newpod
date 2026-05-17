@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Politică de confidențialitate – Newpod</title>
+  <title>Termeni și condiții – Newpod</title>
   <meta name="robots" content="noindex, follow" />
   <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -109,90 +109,100 @@
     <div class="priv-wrap">
       <a href="/" class="priv-back">← Înapoi la site</a>
 
-      <h1>Politică de confidențialitate</h1>
+      <h1>Termeni și condiții</h1>
       <span class="priv-updated">Ultima actualizare: mai 2025</span>
 
       <div class="priv-highlight">
-        Această pagină explică ce date colectăm, de ce le colectăm și cum le protejăm. Nu vindem și nu transmitem datele dvs. unor terțe părți în scop comercial.
+        Prin utilizarea site-ului newpod.ro sau prin solicitarea unei oferte, acceptați termenii și condițiile de mai jos. Vă rugăm să le citiți cu atenție.
       </div>
 
-      <h2>1. Cine suntem</h2>
+      <h2>1. Informații generale</h2>
       <p>
-        SC Newpod SRL, cu sediul în Str. Ioan Sabău, Nr. 5, Bistrița, județul Bistrița-Năsăud, România.
-        Puteți lua legătura cu noi la adresa <a href="mailto:office@newpod.ro">office@newpod.ro</a>
-        sau la numărul <a href="tel:0744638212">0744 638 212</a>.
+        Site-ul newpod.ro este operat de <strong>SC Newpod SRL</strong>, cu sediul în Str. Ioan Sabău, Nr. 5,
+        Bistrița, județul Bistrița-Năsăud, România. Ne puteți contacta la
+        <a href="mailto:office@newpod.ro">office@newpod.ro</a> sau la <a href="tel:0744638212">0744 638 212</a>.
       </p>
 
-      <h2>2. Ce date colectăm și de ce</h2>
-
-      <p><strong>Formularul de cerere ofertă și formularul de contact</strong></p>
-      <p>Când completați unul dintre formularele de pe site, colectăm datele pe care le introduceți:</p>
+      <h2>2. Servicii oferite</h2>
+      <p>SC Newpod SRL oferă servicii de proiectare, furnizare și instalare a sistemelor de energie solară, inclusiv:</p>
       <ul>
-        <li>Nume, telefon, adresă de e-mail</li>
-        <li>Informații tehnice despre imobil (opționale, pentru calculul ofertei)</li>
-        <li>Mesajul sau întrebarea dvs.</li>
-      </ul>
-      <p>Aceste date sunt trimise direct la adresa noastră de e-mail și sunt folosite exclusiv pentru a răspunde solicitării dvs. Nu sunt stocate în nicio bază de date pe server.</p>
-
-      <p><strong>Formularul de recenzie</strong></p>
-      <p>Dacă lăsați o recenzie, colectăm:</p>
-      <ul>
-        <li>Numele dvs. (afișat public în formatul „Prenume N.")</li>
-        <li>Localitatea (afișată public)</li>
-        <li>Adresa de e-mail și numărul de telefon (opționale — nu sunt afișate public, folosite doar pentru verificare internă)</li>
-        <li>Textul recenziei și nota acordată</li>
-      </ul>
-      <p>Recenziile sunt stocate pe serverul nostru într-un fișier securizat și publicate doar după verificare manuală.</p>
-
-      <p><strong>Adresa IP</strong></p>
-      <p>Pentru a preveni spam-ul, înregistrăm adresa IP a dispozitivului de la care se trimite o recenzie. Această informație este păstrată maximum 48 de ore și nu este folosită în alt scop.</p>
-
-      <h2>3. Cookie-uri</h2>
-      <p>
-        Site-ul newpod.ro nu folosește cookie-uri de urmărire sau publicitate pentru vizitatorii obișnuiți.
-        Singurul cookie tehnic folosit este un cookie de sesiune pentru panoul de administrare intern —
-        acesta nu se activează pentru vizitatorii site-ului.
-      </p>
-
-      <p><strong>Google Analytics</strong></p>
-      <p>
-        Site-ul poate utiliza Google Analytics pentru a înțelege modul în care este folosit (număr de vizitatori, pagini accesate).
-        Google Analytics poate stoca cookie-uri anonime în browserul dvs. Datele colectate sunt anonimizate
-        și nu permit identificarea personală. Puteți dezactiva urmărirea prin
-        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out</a>.
-      </p>
-
-      <h2>4. Cât timp păstrăm datele</h2>
-      <ul>
-        <li>Mesajele primite prin formulare: atât timp cât este necesar pentru a răspunde solicitării</li>
-        <li>Recenziile aprobate: pe termen nelimitat, ca parte din conținutul public al site-ului</li>
-        <li>Adresele IP pentru protecție anti-spam: maximum 48 de ore</li>
+        <li>Panouri solare fotovoltaice (PV) pentru producție de energie electrică</li>
+        <li>Sisteme solare pentru apă caldă menajeră (ACM)</li>
+        <li>Sisteme combinate (iarnă–vară)</li>
+        <li>Întocmirea documentației pentru programul „Casa Verde" (AFM)</li>
+        <li>Service și mentenanță instalații solare</li>
       </ul>
 
-      <h2>5. Drepturile dvs.</h2>
-      <p>Conform Regulamentului GDPR (UE) 2016/679, aveți dreptul să:</p>
+      <h2>3. Solicitarea ofertelor</h2>
+      <p>
+        Formularele de pe site sunt destinate exclusiv solicitării de oferte și informații. Completarea unui formular
+        nu constituie un contract și nu generează obligații financiare pentru nicio parte. Ofertele sunt transmise
+        după analizarea datelor furnizate și pot fi modificate în funcție de condițiile tehnice reale ale obiectivului.
+      </p>
+
+      <h2>4. Prețuri și plăți</h2>
+      <p>
+        Prețurile sunt comunicate individual prin ofertă scrisă și sunt valabile pentru perioada menționată în ofertă.
+        Prețurile afișate sau comunicate verbal nu sunt angajante până la semnarea unui contract. Modalitățile de plată
+        sunt stabilite de comun acord în contractul de prestări servicii.
+      </p>
+
+      <h2>5. Execuție și livrare</h2>
+      <p>
+        Termenele de execuție sunt estimate la momentul ofertării și pot varia în funcție de disponibilitatea
+        echipamentelor, condițiile meteorologice și accesul la obiectiv. SC Newpod SRL nu răspunde pentru întârzieri
+        cauzate de factori independenți (furnizori, condiții de vreme, aprobări administrative).
+      </p>
+
+      <h2>6. Garanție</h2>
+      <p>
+        Produsele instalate beneficiază de garanția producătorului conform specificațiilor tehnice ale fiecărui echipament.
+        Manopera este garantată conform prevederilor legale în vigoare. Garanția nu acoperă deteriorările cauzate de
+        utilizare necorespunzătoare, calamități naturale sau intervenții ale unor terți neautorizați.
+      </p>
+
+      <h2>7. Limitarea răspunderii</h2>
+      <p>
+        SC Newpod SRL nu poate fi trasă la răspundere pentru:
+      </p>
       <ul>
-        <li>Solicitați accesul la datele personale pe care le deținem despre dvs.</li>
-        <li>Solicitați corectarea sau ștergerea acestora</li>
-        <li>Vă opuneți prelucrării datelor dvs.</li>
-        <li>Depuneți o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP): <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a></li>
+        <li>Producția energetică estimată — aceasta depinde de factori climatici și de consum care variază în timp</li>
+        <li>Pierderi indirecte sau pierderi de profit generate de funcționarea sau nefuncționarea sistemului</li>
+        <li>Daune cauzate de forță majoră sau evenimente imprevizibile</li>
+        <li>Informații inexacte furnizate de client la solicitarea ofertei</li>
       </ul>
+
+      <h2>8. Proprietate intelectuală</h2>
       <p>
-        Pentru orice solicitare legată de datele dvs. personale, ne puteți contacta la
-        <a href="mailto:office@newpod.ro">office@newpod.ro</a>.
+        Conținutul site-ului newpod.ro — texte, imagini, grafice, logo-uri — este proprietatea SC Newpod SRL și este
+        protejat de legislația privind drepturile de autor. Reproducerea fără acordul scris al companiei este interzisă.
       </p>
 
-      <h2>6. Securitate</h2>
+      <h2>9. Protecția datelor</h2>
       <p>
-        Luăm măsuri rezonabile pentru a proteja datele colectate: accesul la fișierele de date este restricționat
-        la nivel de server, fișierele sensibile nu sunt accesibile public, iar comunicarea cu site-ul se face
-        prin conexiune securizată HTTPS.
+        Datele personale colectate prin formulare sunt prelucrate în conformitate cu
+        <a href="/politica-de-confidentialitate">Politica de confidențialitate</a> și cu prevederile GDPR (UE) 2016/679.
       </p>
 
-      <h2>7. Modificări ale acestei politici</h2>
+      <h2>10. Legea aplicabilă și soluționarea litigiilor</h2>
       <p>
-        Orice modificare a acestei politici va fi publicată pe această pagină cu actualizarea datei de mai sus.
-        Vă recomandăm să o consultați periodic.
+        Prezentele condiții sunt guvernate de legislația română. Orice litigiu se va soluționa pe cale amiabilă sau,
+        în caz contrar, de instanțele judecătorești competente din România. Consumatorii pot apela și la platforma
+        europeană de soluționare online a litigiilor:
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.
+      </p>
+
+      <h2>11. Modificări ale termenilor</h2>
+      <p>
+        SC Newpod SRL își rezervă dreptul de a modifica acești termeni în orice moment. Versiunea actualizată va fi
+        publicată pe această pagină cu data revizuirii. Continuarea utilizării site-ului după publicarea modificărilor
+        constituie acceptarea noilor termeni.
+      </p>
+
+      <h2>12. Contact</h2>
+      <p>
+        Pentru orice întrebări legate de acești termeni, ne puteți contacta la
+        <a href="mailto:office@newpod.ro">office@newpod.ro</a> sau la <a href="tel:0744638212">0744 638 212</a>.
       </p>
     </div>
   </main>
@@ -219,7 +229,7 @@
       document.body.style.overflow = '';
     }
 
-    burger.addEventListener('click', function() {
+    burger.addEventListener('click', function () {
       var isOpen = burger.classList.toggle('open');
       mobileMenu.classList.toggle('open', isOpen);
       mobileMenu.setAttribute('aria-hidden', !isOpen);
@@ -230,7 +240,7 @@
     });
 
     mobileClose.addEventListener('click', closeMenu);
-    mobileLinks.forEach(function(l) { l.addEventListener('click', closeMenu); });
+    mobileLinks.forEach(function (l) { l.addEventListener('click', closeMenu); });
   </script>
 
 </body>

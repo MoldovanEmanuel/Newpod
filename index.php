@@ -110,17 +110,6 @@
     }
   </script>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K239B6FVN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-0K239B6FVN');
-  </script>
 </head>
 
 <body>
@@ -728,8 +717,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a> · <a href="politica-de-confidentialitate">Politică de confidențialitate</a></p>
+    <p>© 2025 SC Newpod SRL · Str. Ioan Sabău, Nr. 5, Bistrița, România · <a href="tel:0744638212">+40 (744) 638 212</a> · <a href="mailto:office@newpod.ro">office@newpod.ro</a></p>
+    <p><a href="termeni-si-conditii">Termeni și condiții</a> · <a href="politica-de-confidentialitate">Politică de confidențialitate</a></p>
   </footer>
+
+  <?php require 'includes/cookie-banner.php'; ?>
 
   <script>
     // ── Burger menu ──

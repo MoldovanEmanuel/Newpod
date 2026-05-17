@@ -44,7 +44,7 @@ RewriteCond %{THE_REQUEST} \s/+(admin|politica-de-confidentialitate)\.php [NC]
 RewriteRule ^ /%1 [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(admin|politica-de-confidentialitate)$ $1.php [L]
+RewriteRule ^(admin|politica-de-confidentialitate|termeni-si-conditii)$ $1.php [L]
 
 # ── Custom 404 ──
 ErrorDocument 404 /404.php
