@@ -721,7 +721,6 @@
       <div class="ft-top">
         <div class="ft-links">
           <a href="/termeni-si-conditii">Termeni și condiții</a>
-          <span>·</span>
           <a href="/politica-de-confidentialitate">Politică de confidențialitate</a>
         </div>
         <div class="ft-anpc">

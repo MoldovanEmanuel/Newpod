@@ -1825,14 +1825,13 @@ section {
 
 /* ── FOOTER ── */
 footer {
-  background: #fff;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
-  color: rgba(0, 0, 0, 0.42);
+  background: #080f07;
+  color: rgba(255, 255, 255, 0.35);
   font-size: 0.79rem;
   padding: 3rem 1.8rem 2.5rem;
 }
 footer a {
-  color: rgba(0, 0, 0, 0.52);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -1846,20 +1845,17 @@ footer a:hover {
 .ft-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2.5rem;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   margin-bottom: 1rem;
 }
 .ft-links {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.ft-links span {
-  opacity: 0.4;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
 }
 .ft-anpc {
   display: flex;
@@ -1868,7 +1864,7 @@ footer a:hover {
   flex-shrink: 0;
 }
 .ft-anpc img {
-  max-width: 200px;
+  max-width: 160px;
   width: 100%;
   height: auto;
   opacity: 0.85;
@@ -1885,7 +1881,7 @@ footer a:hover {
   .ft-top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.2rem;
   }
   .ft-legal {
     text-align: left;
