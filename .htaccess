@@ -36,7 +36,7 @@ php_value error_reporting 0
 </IfModule>
 
 # ── Canonical index redirect ──
-RewriteCond %{THE_REQUEST} \s/+(index(\.php|\.html?)?)(\?|\ |\s) [NC]
+RewriteCond %{THE_REQUEST} \s/+(index(\.php|\.html?)?)\ [NC]
 RewriteRule ^ https://newpod.ro/? [L,R=301]
 
 # ── Clean URLs (admin and privacy pages only) ──
